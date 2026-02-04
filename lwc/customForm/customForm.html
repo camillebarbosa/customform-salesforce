@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-04-2026
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="main-card">
+    <h3 class="title"> Parece que esse cliente possui um novo nivel de Prioridade</h3>
+    <lightning-input
+        type="text"
+        label="Trocar Prioridade"
+        value={customerPriority}
+        onchange={handleChange}>
+    </lightning-input>
+
+    <lightning-button
+        label="Salvar"
+        onclick={handleSave}>
+    </lightning-button>
+    </div>
+</template>
