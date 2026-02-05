@@ -1,23 +1,42 @@
-<!--
-  @description       : 
-  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
-  @group             : 
-  @last modified on  : 02-04-2026
-  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
--->
 <template>
-    <div class="main-card">
-    <h3 class="title"> Parece que esse cliente possui um novo nivel de Prioridade</h3>
-    <lightning-input
-        type="text"
-        label="Trocar Prioridade"
-        value={customerPriority}
-        onchange={handleChange}>
-    </lightning-input>
+    <!-- FORMULÁRIO -->
+    <template if:true={showForm}>
+        <div class="main-card">
+            <h3 class="title">
+                Parece que esse cliente possui um novo nível de Prioridade
+            </h3>
 
-    <lightning-button
-        label="Salvar"
-        onclick={handleSave}>
-    </lightning-button>
-    </div>
+        <div class="slds-m-bottom_medium">
+            <lightning-combobox
+                value={customerPriority}
+                placeholder="Selecione a prioridade"
+                options={priorityOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+
+        <lightning-button
+            label="Salvar"
+            variant="brand"
+            onclick={handleSave}>
+        </lightning-button>
+        </div>
+    </template>
+
+    <!-- RESULTADO -->
+    <template if:true={showResult}>
+        <div class="main-card">
+            <template if:true={isSuccess}>
+                <h3 class="success">
+                    Prioridade salva com sucesso!
+                </h3>
+            </template>
+
+            <template if:false={isSuccess}>
+                <h3 class="error">
+                    Ocorreu um erro ao salvar a prioridade.
+                </h3>
+            </template>
+        </div>
+    </template>
 </template>
