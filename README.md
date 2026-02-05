@@ -2,6 +2,7 @@
 
 Um componente Lightning Web Component (LWC) que permite atualizar a **prioridade de um registro Case** diretamente na interface do Salesforce. Ele utiliza um serviço Apex para persistir a alteração e fornece feedback visual ao usuário.
 
+
 ---
 
 ## 📦 Estrutura do Projeto
